@@ -1,0 +1,6 @@
+\documentclass[crop,10pt]{standalone}
+\usepackage{graphicx}
+\begin{document}
+    {%- for file in files %}
+    \includegraphics{ {{- file -}} }{% endfor %}
+\end{document}

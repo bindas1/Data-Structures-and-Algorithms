@@ -1,0 +1,93 @@
+# Tree in DOT format, extended with GNU M4 macros and some additional styling
+#
+# Styles:
+# - null pointers [NULL]
+# - root node [YELLOW]
+# - invisible padding nodes & edges for more symmetrical binary tree [INVISIBLE_N/INVISIBLE_E] 
+#
+# Generate PNG file with:
+# > m4 tree.dot | dot -Tpng -o tree.png 
+
+define(YELLOW, `color = "#ffc49c", fillcolor = "#ffe1cc:#ffe7d7"')
+define(NULL, `label = "", width = .1, height = .1, color = "#b3b3b3", fillcolor = "#d7d7d7:#e4e4e4"')
+define(INVISIBLE_E, `style = invisible, arrowsize = 0, weight = 10')
+define(INVISIBLE_N, `style = invisible, label = ""')
+
+
+strict digraph dot {
+
+    graph [
+        layout = dot,
+        dpi = 300,
+        nodesep = 0.2,
+        ranksep = 0.5,
+        splines = line,
+        ordering = out,
+    ]
+
+    edge [
+        color = "#89cadd",
+        penwidth = 2,
+        arrowsize = 0.7,
+    ]
+
+    node [
+        style = filled,
+        color = "#89cadd",
+        fillcolor = "#c3e3ed:#cee9f1",
+        gradientangle = 90,
+        penwidth = 2,
+        fontname = "Roboto Medium",
+        fontsize = 12,
+        shape = circle,
+    ]
+
+    # Rows
+
+    40 [YELLOW]
+    {rank=same 20, 60}
+    {rank=same 10, 30, m40, 50, 70}
+    {rank=same left_10, 15, m20, 25, 35, left_50, 55, m60, 65, 75}
+
+
+    # NULL pointers
+
+    left_10, left_50 [NULL]
+
+
+    # Invisible padding nodes
+
+    m40, m20, m60, m10, m30, m50, m70 [INVISIBLE_N]
+
+
+    # Edges
+
+    40 -> 20
+    40 -> m40 [INVISIBLE_E]
+    40 -> 60
+
+    20 -> 10
+    20 -> m20 [INVISIBLE_E]
+    20 -> 30
+
+    60 -> 50
+    60 -> m60 [INVISIBLE_E]
+    60 -> 70
+
+    10 -> left_10
+    10 -> m10 [INVISIBLE_E]
+    10 -> 15
+
+    30 -> 25
+    30 -> m30 [INVISIBLE_E]
+    30 -> 35
+
+    50 -> left_50
+    50 -> m50 [INVISIBLE_E]
+    50 -> 55
+
+    70 -> 65
+    70 -> m70 [INVISIBLE_E]
+    70 -> 75
+
+}

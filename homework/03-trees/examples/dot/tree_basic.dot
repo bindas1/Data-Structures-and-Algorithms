@@ -1,0 +1,17 @@
+# Basic tree in DOT format
+# 
+# Generate PNG file with:
+# > dot -Tpng -o tree_basic.png tree_basic.dot
+
+strict digraph dot {
+
+	40 -> 20
+	40 -> 60
+
+	20 -> 10
+	20 -> 30
+
+	60 -> 50
+	60 -> 70
+
+}

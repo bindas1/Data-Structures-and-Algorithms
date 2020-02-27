@@ -1,0 +1,30 @@
+Liczba elementow: 1000
+TreeMap: 1256
+DefMap: 861
+Liczba elementow: 2000
+TreeMap: 2786
+DefMap: 1829
+Liczba elementow:3000
+TreeMap: 4363
+DefMap: 2848
+Liczba elementow: 4000
+TreeMap: 5660
+DefMap: 5099
+Liczba elementow: 5000
+TreeMap: 8445
+DefMap: 6348
+Liczba elementow: 6000
+TreeMap: 11452
+DefMap: 6070
+Liczba elementow: 7000
+TreeMap: 10401
+DefMap: 9345
+Liczba elementow: 8000
+TreeMap: 16032
+DefMap: 10226
+Liczba elementow: 9000
+TreeMap: 18470
+DefMap: 11636
+Liczba elementow: 10000
+TreeMap: 20635
+DefMap: 12981
